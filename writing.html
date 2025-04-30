@@ -37,6 +37,22 @@
       font-size: 1.2rem;
     }
 
+    .email-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #FAD0FF;
+      color: #333;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .email-button:hover {
+      background-color: #f4bdf7;
+    }
+
     .portfolio {
       padding: 2rem;
       background-color: #FAD0FF;
@@ -54,10 +70,16 @@
       border-radius: 8px;
       padding: 1rem;
       margin-bottom: 1.5rem;
+      cursor: pointer;
     }
 
     .sample h3 {
       margin-top: 0;
+    }
+
+    .sample-content {
+      display: none;
+      margin-top: 1rem;
     }
 
     footer {
@@ -75,21 +97,24 @@
     <p>Cornell Tech (Cornell University)</p>
     <p>Expected Graduation: May, 2025</p>
     <p><strong>Pitch:</strong> Solution maker who is passionate about letting my creativity go wild</p>
+    <a class="email-button" href="mailto:ne245@cornell.edu">Email Me</a>
   </header>
 
   <section class="portfolio">
     <h2>Writing Samples</h2>
 
-    <div class="sample">
+    <div class="sample" onclick="toggleContent(this)">
       <h3>Sample Title 1</h3>
-      <p>Short description or excerpt from the writing sample...</p>
-      <a href="#">Read more</a>
+      <div class="sample-content">
+        <p>This is an excerpt or full content from the writing sample. You can paste your work here or link externally.</p>
+      </div>
     </div>
 
-    <div class="sample">
+    <div class="sample" onclick="toggleContent(this)">
       <h3>Sample Title 2</h3>
-      <p>Short description or excerpt from the writing sample...</p>
-      <a href="#">Read more</a>
+      <div class="sample-content">
+        <p>This is another writing sample. Feel free to elaborate or hyperlink to full versions.</p>
+      </div>
     </div>
 
     <!-- Add more writing samples as needed -->
@@ -99,5 +124,12 @@
     <p>&copy; 2025 Noor El-Hawwat</p>
   </footer>
 
+  <script>
+    function toggleContent(element) {
+      const content = element.querySelector('.sample-content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
+
